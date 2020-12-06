@@ -1,3 +1,7 @@
+"""
+    对所有mask文件夹下的图片, 生成方便肉眼观察的mask图片到maskview文件夹下
+"""
+
 import cv2
 import os
 d = "/home/dengyangshen/code/Pytorch-UNet/data/"

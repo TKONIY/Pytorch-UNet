@@ -66,10 +66,15 @@ def import_img_label(t_dir: str, f_img_dir: str, f_label_dir: str, repair: int, 
     t_label_path = t_dir + '/masks/' + str(t_index) + '.png'
     t_label_view_path = t_dir + '/maskview/' + str(t_index) + '.png'
     
+    print(img.shape)
     cv2.imwrite(t_img_path,img)
+    print(t_img_path)
     cv2.imwrite(t_label_path, label)
+    print(t_label_path)
     label = label * 255
     cv2.imwrite(t_label_view_path, label)
+    print(t_label_view_path)
+    
 
 
 # 调用def
@@ -82,5 +87,5 @@ t_dir = os.environ["HOME"] + "/code/Pytorch-UNet/data"
 
 
 
-for i in range(1000):
+for i in range(len(os.listdir(f_img_dir))):
     import_img_label(t_dir, f_img_dir, f_label_dir, repair, i, i)

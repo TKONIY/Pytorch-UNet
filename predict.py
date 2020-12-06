@@ -103,7 +103,7 @@ if __name__ == "__main__":
     out_files = get_output_filenames(args)
 
     net = UNet(n_channels=1, n_classes=1)
-    print(net)
+    # print(net)
 
     logging.info("Loading model {}".format(args.model))
 
@@ -112,7 +112,7 @@ if __name__ == "__main__":
     net.to(device=device)
     net.load_state_dict(torch.load(args.model, map_location=device))
 
-    print("load")
+    # print("load")
     logging.info("Model loaded !")
 
     for i, fn in enumerate(in_files):
